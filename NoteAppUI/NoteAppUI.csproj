@@ -52,25 +52,25 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddAndEditForm.cs">
+    <Compile Include="AddAndEditNoteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddAndEditForm.Designer.cs">
-      <DependentUpon>AddAndEditForm.cs</DependentUpon>
+    <Compile Include="AddAndEditNoteForm.Designer.cs">
+      <DependentUpon>AddAndEditNoteForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainEntry.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddAndEditForm.resx">
-      <DependentUpon>AddAndEditForm.cs</DependentUpon>
+    <EmbeddedResource Include="AddAndEditNoteForm.resx">
+      <DependentUpon>AddAndEditNoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -96,6 +96,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NoteApp.Model\NoteApp.Model.csproj">
+      <Project>{aebfc6a8-413b-4c22-ad47-e0729f927d37}</Project>
+      <Name>NoteApp.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

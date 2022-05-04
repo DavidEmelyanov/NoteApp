@@ -90,9 +90,9 @@
 			this.AbouDateLabel.AutoSize = true;
 			this.AbouDateLabel.Location = new System.Drawing.Point(12, 216);
 			this.AbouDateLabel.Name = "AbouDateLabel";
-			this.AbouDateLabel.Size = new System.Drawing.Size(67, 13);
+			this.AbouDateLabel.Size = new System.Drawing.Size(127, 13);
 			this.AbouDateLabel.TabIndex = 5;
-			this.AbouDateLabel.Text = "2019 ___ (ц)";
+			this.AbouDateLabel.Text = "2019 Olga Andreevskaya";
 			// 
 			// EmailLinkLabel
 			// 
@@ -103,6 +103,7 @@
 			this.EmailLinkLabel.TabIndex = 6;
 			this.EmailLinkLabel.TabStop = true;
 			this.EmailLinkLabel.Text = "intels1155@gmail.com";
+			this.EmailLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.EmailLinkLabel_LinkClicked);
 			// 
 			// GithubLinkLabel
 			// 
@@ -113,6 +114,7 @@
 			this.GithubLinkLabel.TabIndex = 7;
 			this.GithubLinkLabel.TabStop = true;
 			this.GithubLinkLabel.Text = "github.com/intels1155/NoteApp";
+			this.GithubLinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.GithubLinkLabel_LinkClicked);
 			// 
 			// AuthorNameLabel
 			// 

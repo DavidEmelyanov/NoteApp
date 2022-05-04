@@ -16,5 +16,16 @@ namespace NoteAppUI
 		{
 			InitializeComponent();
 		}
+
+		private void EmailLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			System.Diagnostics.Process.Start("mailto:intels1155@gmail.com");
+		}
+
+
+		private void GithubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			System.Diagnostics.Process.Start("https://github.com/ine");
+		}
 	}
 }

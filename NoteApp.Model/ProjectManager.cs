@@ -7,7 +7,7 @@ namespace NoteApp.Model
 	/// <summary>
 	/// Класс, реализующий сохранение в файл и загрузку проекта из файла.
 	/// </summary>
-	public static class ProjectDataManager
+	public static class ProjectManager
 	{
 		/// <summary>
 		/// Хранит путь до файла сохранения.
@@ -44,7 +44,7 @@ namespace NoteApp.Model
 			catch (FileNotFoundException)
 			{
 				ProjectData projectData = new ProjectData();
-				ProjectDataManager.SaveToFile(projectData);
+				ProjectManager.SaveToFile(projectData);
 
 				using (StreamReader file = File.OpenText(_pathToFile))
 				{
@@ -57,7 +57,7 @@ namespace NoteApp.Model
 				Directory.CreateDirectory(System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp");
 
 				ProjectData projectData = new ProjectData();
-				ProjectDataManager.SaveToFile(projectData);
+				ProjectManager.SaveToFile(projectData);
 
 				using (StreamReader file = File.OpenText(_pathToFile))
 				{
