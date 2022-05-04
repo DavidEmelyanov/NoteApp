@@ -11,8 +11,8 @@ namespace NoteAppUI
 		/// <summary>
 		/// Хранит номер текущей заметки.
 		/// </summary>
-		private int _noteId;
-		public int NoteId { get; set; }
+		private Note _selectedNote;
+		public Note SelectedNote { get; set; }
 
 		/// <summary>
 		/// Хранит экземпляр текущего проекта.
@@ -62,10 +62,10 @@ namespace NoteAppUI
 			// Обновляем данные коллекции.
 			NotesListBox.DataSource = null;
 			NotesListBox.DisplayMember = "Name";
-			NoteId = NotesListBox.SelectedIndex;
+			SelectedNote = (Note)NotesListBox.SelectedItem;
 			if (CategoryComboBox.SelectedIndex == 0)
 			{
-				NotesListBox.DataSource = CurrentProjectData.Notes;
+				NotesListBox.DataSource = CurrentProjectData.OrderListByEditDate();
 			}
 			else if (CategoryComboBox.SelectedIndex >= 1)
 			{
@@ -94,7 +94,7 @@ namespace NoteAppUI
 		}
 
 		/// <summary>
-		/// Заполняет категории заметки
+		/// Заполнение комбобокса категориями
 		/// </summary>
 		public void FillCategoryItems()
 		{
@@ -105,7 +105,7 @@ namespace NoteAppUI
 			}
 		}
 
-		// Очистка полей.
+		// Очистка полей после снятия выделения заметки
 		private void ClearFields()
 		{
 			NoteTitleLabel.Text = "";
@@ -170,19 +170,21 @@ namespace NoteAppUI
 
 		private void editNoteToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			NoteId = NotesListBox.SelectedIndex;
+			//CurrentNote = NotesListBox.SelectedIndex;
+			SelectedNote = (Note)NotesListBox.SelectedItem;
 			if (NotesListBox.SelectedIndex != -1)
 			{
 				NoteForm addAndEditNoteForm = new NoteForm();
-				addAndEditNoteForm.EditNote(CurrentProjectData.Notes[NoteId]);
+				addAndEditNoteForm.EditNote(SelectedNote); //Передача выбранной заметки из листбокса в форму редактирования
 
 				if (addAndEditNoteForm.ShowDialog() == DialogResult.OK)
 				{
 					if (CategoryComboBox.SelectedIndex == 0)
 					{
-						CurrentProjectData.Notes[NoteId] = addAndEditNoteForm.CurrentNote;
+						CurrentProjectData.CurrentNote = addAndEditNoteForm.CurrentNote;
 						UpdateNotesList();
 					}
+					UpdateNotesList();
 				}
 			}
 		}
@@ -297,18 +299,18 @@ namespace NoteAppUI
 			DialogResult result = MessageBox.Show("Do you want to exit?", "NoteApp", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 			if (result == DialogResult.Yes)
 			{
-				NoteId = NotesListBox.SelectedIndex;
+				SelectedNote = (Note)NotesListBox.SelectedItem;
 				// Для сохранения список заметок должен быть не пустым
 				if (CurrentProjectData.Notes.Count != 0)
 				{
 					if (NotesListBox.SelectedIndex != -1)
 					{
-						CurrentProjectData.CurrentNote = CurrentProjectData.Notes[NoteId];
+						SelectedNote = CurrentProjectData.CurrentNote;
 					}
 
 					if (NotesListBox.SelectedIndex == -1)
 					{
-						CurrentProjectData.CurrentNote = null;
+						SelectedNote = null;
 					}
 
 					ProjectManager.SaveToFile(CurrentProjectData);

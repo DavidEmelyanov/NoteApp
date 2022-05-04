@@ -68,9 +68,6 @@ namespace NoteApp.Model
 			}
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
 		public NoteCategory Category // 2
 		{
 			get { return _category; }

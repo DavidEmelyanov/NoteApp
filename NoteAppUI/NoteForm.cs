@@ -107,16 +107,18 @@ namespace NoteAppUI
 			}
 			else
 			{
-				if (IsEdit)
+				if (IsEdit) // условие, при котором уже созданая заметка редактируется
 				{
 					DialogResult result = MessageBox.Show("Save changes to current note?", "NoteApp",
 						MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-					if (result == DialogResult.Yes)
+					if (result == DialogResult.Yes) // подтверждение сохранения изменений
 					{
 						CurrentCategory = (NoteCategory) CategoryComboBox.SelectedIndex;
 						var CurrentCreationDateTime = CurrentNote.DateOfCreation;
-						CurrentNote = new Note(TitleTextBox.Text, NoteTextBox.Text, CurrentCategory);
 						CurrentNote.DateOfCreation = CurrentCreationDateTime;
+						CurrentNote.Name = TitleTextBox.Text;
+						CurrentNote.Content = NoteTextBox.Text;
+						CurrentNote.Category = CurrentCategory;
 					}
 				}
 				else
@@ -126,6 +128,7 @@ namespace NoteAppUI
 				}
 
 				DialogResult = DialogResult.OK;
+				
 			}
 		}
 
