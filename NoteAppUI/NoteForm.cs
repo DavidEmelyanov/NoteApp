@@ -11,7 +11,7 @@ using NoteApp.Model;
 
 namespace NoteAppUI
 {
-	public partial class AddAndEditNoteForm : Form
+	public partial class NoteForm : Form
 	{
 		// Состояние формы создания/редактирования.
 		// Если true - форма открыта для редактирования записи.
@@ -34,7 +34,7 @@ namespace NoteAppUI
 
 		public NoteCategory CurrentCategory;
 
-		public AddAndEditNoteForm()
+		public NoteForm()
 		{
 			InitializeComponent();
 			// Установка всплывающие подсказки.
@@ -100,20 +100,33 @@ namespace NoteAppUI
 
 	private void OkButton_Click(object sender, EventArgs e)
 		{
-			if (IsEdit)
+			if (TitleTextBox.Text == "" || NoteTextBox.Text == "")
 			{
-				CurrentCategory = (NoteCategory)CategoryComboBox.SelectedIndex;
-				var CurrentCreationDateTime = CurrentNote.DateOfCreation;
-				CurrentNote = new Note(TitleTextBox.Text, NoteTextBox.Text, CurrentCategory);
-				CurrentNote.DateOfCreation = CurrentCreationDateTime;
+				//Ничего не делаем
+				MessageBox.Show("Title and note content shouldn't be empty");
 			}
 			else
 			{
-				CurrentCategory = (NoteCategory)CategoryComboBox.SelectedIndex;
-				CurrentNote = new Note(TitleTextBox.Text, NoteTextBox.Text, CurrentCategory);
-			}
+				if (IsEdit)
+				{
+					DialogResult result = MessageBox.Show("Save changes to current note?", "NoteApp",
+						MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+					if (result == DialogResult.Yes)
+					{
+						CurrentCategory = (NoteCategory) CategoryComboBox.SelectedIndex;
+						var CurrentCreationDateTime = CurrentNote.DateOfCreation;
+						CurrentNote = new Note(TitleTextBox.Text, NoteTextBox.Text, CurrentCategory);
+						CurrentNote.DateOfCreation = CurrentCreationDateTime;
+					}
+				}
+				else
+				{
+					CurrentCategory = (NoteCategory) CategoryComboBox.SelectedIndex;
+					CurrentNote = new Note(TitleTextBox.Text, NoteTextBox.Text, CurrentCategory);
+				}
 
-			DialogResult = DialogResult.OK;
+				DialogResult = DialogResult.OK;
+			}
 		}
 
 		private void CancelButton_Click(object sender, EventArgs e)
@@ -149,11 +162,5 @@ namespace NoteAppUI
 
 			ModifiedDateTimeLabel.Text = dateOfLastEdit.ToString();
 		}
-
-		private void AddAndEditNoteForm_Load(object sender, EventArgs e)
-		{
-
-		}
-
 	}
 }

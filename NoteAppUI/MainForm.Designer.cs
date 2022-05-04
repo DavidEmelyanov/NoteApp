@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.MainMenu = new System.Windows.Forms.MenuStrip();
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,9 +41,6 @@
 			this.MainSplitContainer = new System.Windows.Forms.SplitContainer();
 			this.CountNotesLabel = new System.Windows.Forms.Label();
 			this.NoteCountLabel = new System.Windows.Forms.Label();
-			this.DeleteNoteButton = new System.Windows.Forms.Button();
-			this.EditNoteButton = new System.Windows.Forms.Button();
-			this.AddNoteButton = new System.Windows.Forms.Button();
 			this.NotesListBox = new System.Windows.Forms.ListBox();
 			this.CategoryComboBox = new System.Windows.Forms.ComboBox();
 			this.ShowCategoryLabel = new System.Windows.Forms.Label();
@@ -54,6 +52,9 @@
 			this.CategoryLabelFixed = new System.Windows.Forms.Label();
 			this.NoteTextBox = new System.Windows.Forms.TextBox();
 			this.NoteTitleLabel = new System.Windows.Forms.Label();
+			this.DeleteNoteButton = new System.Windows.Forms.Button();
+			this.EditNoteButton = new System.Windows.Forms.Button();
+			this.AddNoteButton = new System.Windows.Forms.Button();
 			this.MainMenu.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.MainSplitContainer)).BeginInit();
 			this.MainSplitContainer.Panel1.SuspendLayout();
@@ -168,13 +169,14 @@
 			this.MainSplitContainer.Panel2.Controls.Add(this.NoteTitleLabel);
 			this.MainSplitContainer.Panel2MinSize = 400;
 			this.MainSplitContainer.Size = new System.Drawing.Size(634, 426);
-			this.MainSplitContainer.SplitterDistance = 200;
+			this.MainSplitContainer.SplitterDistance = 197;
 			this.MainSplitContainer.TabIndex = 1;
 			// 
 			// CountNotesLabel
 			// 
+			this.CountNotesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.CountNotesLabel.AutoSize = true;
-			this.CountNotesLabel.Location = new System.Drawing.Point(57, 397);
+			this.CountNotesLabel.Location = new System.Drawing.Point(6, 392);
 			this.CountNotesLabel.Name = "CountNotesLabel";
 			this.CountNotesLabel.Size = new System.Drawing.Size(42, 13);
 			this.CountNotesLabel.TabIndex = 7;
@@ -182,45 +184,13 @@
 			// 
 			// NoteCountLabel
 			// 
+			this.NoteCountLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
 			this.NoteCountLabel.AutoSize = true;
-			this.NoteCountLabel.Location = new System.Drawing.Point(13, 397);
+			this.NoteCountLabel.Location = new System.Drawing.Point(6, 373);
 			this.NoteCountLabel.Name = "NoteCountLabel";
 			this.NoteCountLabel.Size = new System.Drawing.Size(38, 13);
 			this.NoteCountLabel.TabIndex = 6;
 			this.NoteCountLabel.Text = "Notes:";
-			// 
-			// DeleteNoteButton
-			// 
-			this.DeleteNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-			this.DeleteNoteButton.Location = new System.Drawing.Point(139, 367);
-			this.DeleteNoteButton.Name = "DeleteNoteButton";
-			this.DeleteNoteButton.Size = new System.Drawing.Size(54, 23);
-			this.DeleteNoteButton.TabIndex = 5;
-			this.DeleteNoteButton.Text = "Delete";
-			this.DeleteNoteButton.UseVisualStyleBackColor = true;
-			this.DeleteNoteButton.Click += new System.EventHandler(this.DeleteNoteButton_Click);
-			// 
-			// EditNoteButton
-			// 
-			this.EditNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.EditNoteButton.Location = new System.Drawing.Point(72, 367);
-			this.EditNoteButton.Name = "EditNoteButton";
-			this.EditNoteButton.Size = new System.Drawing.Size(54, 23);
-			this.EditNoteButton.TabIndex = 4;
-			this.EditNoteButton.Text = "Edit";
-			this.EditNoteButton.UseVisualStyleBackColor = true;
-			this.EditNoteButton.Click += new System.EventHandler(this.EditNoteButton_Click);
-			// 
-			// AddNoteButton
-			// 
-			this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.AddNoteButton.Location = new System.Drawing.Point(12, 367);
-			this.AddNoteButton.Name = "AddNoteButton";
-			this.AddNoteButton.Size = new System.Drawing.Size(54, 23);
-			this.AddNoteButton.TabIndex = 3;
-			this.AddNoteButton.Text = "Add";
-			this.AddNoteButton.UseVisualStyleBackColor = true;
-			this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
 			// 
 			// NotesListBox
 			// 
@@ -228,7 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.NotesListBox.FormattingEnabled = true;
-			this.NotesListBox.Location = new System.Drawing.Point(12, 45);
+			this.NotesListBox.Location = new System.Drawing.Point(9, 45);
 			this.NotesListBox.MinimumSize = new System.Drawing.Size(80, 80);
 			this.NotesListBox.Name = "NotesListBox";
 			this.NotesListBox.Size = new System.Drawing.Size(181, 316);
@@ -242,9 +212,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.CategoryComboBox.FormattingEnabled = true;
-			this.CategoryComboBox.Location = new System.Drawing.Point(66, 14);
+			this.CategoryComboBox.Location = new System.Drawing.Point(67, 14);
 			this.CategoryComboBox.Name = "CategoryComboBox";
-			this.CategoryComboBox.Size = new System.Drawing.Size(126, 21);
+			this.CategoryComboBox.Size = new System.Drawing.Size(123, 21);
 			this.CategoryComboBox.TabIndex = 1;
 			this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
 			// 
@@ -252,7 +222,7 @@
 			// 
 			this.ShowCategoryLabel.AutoSize = true;
 			this.ShowCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.ShowCategoryLabel.Location = new System.Drawing.Point(9, 15);
+			this.ShowCategoryLabel.Location = new System.Drawing.Point(6, 15);
 			this.ShowCategoryLabel.Name = "ShowCategoryLabel";
 			this.ShowCategoryLabel.Size = new System.Drawing.Size(58, 15);
 			this.ShowCategoryLabel.TabIndex = 0;
@@ -264,7 +234,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.ModifiedDateTimeLabel.AutoSize = true;
-			this.ModifiedDateTimeLabel.Location = new System.Drawing.Point(289, 64);
+			this.ModifiedDateTimeLabel.Location = new System.Drawing.Point(314, 64);
 			this.ModifiedDateTimeLabel.Name = "ModifiedDateTimeLabel";
 			this.ModifiedDateTimeLabel.Size = new System.Drawing.Size(93, 13);
 			this.ModifiedDateTimeLabel.TabIndex = 7;
@@ -276,7 +246,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.ModifiedLabel.AutoSize = true;
-			this.ModifiedLabel.Location = new System.Drawing.Point(233, 64);
+			this.ModifiedLabel.Location = new System.Drawing.Point(258, 64);
 			this.ModifiedLabel.Name = "ModifiedLabel";
 			this.ModifiedLabel.Size = new System.Drawing.Size(50, 13);
 			this.ModifiedLabel.TabIndex = 6;
@@ -285,7 +255,7 @@
 			// CreatedDateTimeLabel
 			// 
 			this.CreatedDateTimeLabel.AutoSize = true;
-			this.CreatedDateTimeLabel.Location = new System.Drawing.Point(59, 64);
+			this.CreatedDateTimeLabel.Location = new System.Drawing.Point(314, 47);
 			this.CreatedDateTimeLabel.Name = "CreatedDateTimeLabel";
 			this.CreatedDateTimeLabel.Size = new System.Drawing.Size(90, 13);
 			this.CreatedDateTimeLabel.TabIndex = 5;
@@ -294,7 +264,7 @@
 			// CreatedLabel
 			// 
 			this.CreatedLabel.AutoSize = true;
-			this.CreatedLabel.Location = new System.Drawing.Point(6, 64);
+			this.CreatedLabel.Location = new System.Drawing.Point(261, 47);
 			this.CreatedLabel.Name = "CreatedLabel";
 			this.CreatedLabel.Size = new System.Drawing.Size(47, 13);
 			this.CreatedLabel.TabIndex = 4;
@@ -304,7 +274,7 @@
 			// 
 			this.NoteCategoryLabel.AutoSize = true;
 			this.NoteCategoryLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NoteCategoryLabel.Location = new System.Drawing.Point(70, 32);
+			this.NoteCategoryLabel.Location = new System.Drawing.Point(66, 45);
 			this.NoteCategoryLabel.Name = "NoteCategoryLabel";
 			this.NoteCategoryLabel.Size = new System.Drawing.Size(81, 15);
 			this.NoteCategoryLabel.TabIndex = 3;
@@ -314,7 +284,7 @@
 			// 
 			this.CategoryLabelFixed.AutoSize = true;
 			this.CategoryLabelFixed.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.CategoryLabelFixed.Location = new System.Drawing.Point(6, 32);
+			this.CategoryLabelFixed.Location = new System.Drawing.Point(4, 45);
 			this.CategoryLabelFixed.Name = "CategoryLabelFixed";
 			this.CategoryLabelFixed.Size = new System.Drawing.Size(58, 15);
 			this.CategoryLabelFixed.TabIndex = 2;
@@ -325,24 +295,66 @@
 			this.NoteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-			this.NoteTextBox.Location = new System.Drawing.Point(8, 80);
+			this.NoteTextBox.Location = new System.Drawing.Point(7, 80);
 			this.NoteTextBox.MinimumSize = new System.Drawing.Size(250, 80);
 			this.NoteTextBox.Multiline = true;
 			this.NoteTextBox.Name = "NoteTextBox";
 			this.NoteTextBox.ReadOnly = true;
 			this.NoteTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-			this.NoteTextBox.Size = new System.Drawing.Size(410, 325);
+			this.NoteTextBox.Size = new System.Drawing.Size(414, 325);
 			this.NoteTextBox.TabIndex = 1;
 			// 
 			// NoteTitleLabel
 			// 
 			this.NoteTitleLabel.AutoSize = true;
 			this.NoteTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-			this.NoteTitleLabel.Location = new System.Drawing.Point(5, 12);
+			this.NoteTitleLabel.Location = new System.Drawing.Point(3, 15);
 			this.NoteTitleLabel.Name = "NoteTitleLabel";
 			this.NoteTitleLabel.Size = new System.Drawing.Size(86, 20);
 			this.NoteTitleLabel.TabIndex = 0;
 			this.NoteTitleLabel.Text = "Note Title";
+			// 
+			// DeleteNoteButton
+			// 
+			this.DeleteNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.DeleteNoteButton.AutoSize = true;
+			this.DeleteNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.delete;
+			this.DeleteNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.DeleteNoteButton.Location = new System.Drawing.Point(158, 373);
+			this.DeleteNoteButton.MinimumSize = new System.Drawing.Size(32, 32);
+			this.DeleteNoteButton.Name = "DeleteNoteButton";
+			this.DeleteNoteButton.Size = new System.Drawing.Size(32, 32);
+			this.DeleteNoteButton.TabIndex = 5;
+			this.DeleteNoteButton.UseVisualStyleBackColor = true;
+			this.DeleteNoteButton.Click += new System.EventHandler(this.DeleteNoteButton_Click);
+			// 
+			// EditNoteButton
+			// 
+			this.EditNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.EditNoteButton.AutoSize = true;
+			this.EditNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.edit;
+			this.EditNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.EditNoteButton.Location = new System.Drawing.Point(98, 373);
+			this.EditNoteButton.MinimumSize = new System.Drawing.Size(32, 32);
+			this.EditNoteButton.Name = "EditNoteButton";
+			this.EditNoteButton.Size = new System.Drawing.Size(32, 32);
+			this.EditNoteButton.TabIndex = 4;
+			this.EditNoteButton.UseVisualStyleBackColor = true;
+			this.EditNoteButton.Click += new System.EventHandler(this.EditNoteButton_Click);
+			// 
+			// AddNoteButton
+			// 
+			this.AddNoteButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+			this.AddNoteButton.AutoSize = true;
+			this.AddNoteButton.BackgroundImage = global::NoteAppUI.Properties.Resources.add;
+			this.AddNoteButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+			this.AddNoteButton.Location = new System.Drawing.Point(60, 373);
+			this.AddNoteButton.MinimumSize = new System.Drawing.Size(32, 32);
+			this.AddNoteButton.Name = "AddNoteButton";
+			this.AddNoteButton.Size = new System.Drawing.Size(32, 32);
+			this.AddNoteButton.TabIndex = 3;
+			this.AddNoteButton.UseVisualStyleBackColor = true;
+			this.AddNoteButton.Click += new System.EventHandler(this.AddNoteButton_Click);
 			// 
 			// MainForm
 			// 
@@ -351,6 +363,7 @@
 			this.ClientSize = new System.Drawing.Size(634, 441);
 			this.Controls.Add(this.MainSplitContainer);
 			this.Controls.Add(this.MainMenu);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.MainMenu;
 			this.MinimumSize = new System.Drawing.Size(600, 350);
 			this.Name = "MainForm";

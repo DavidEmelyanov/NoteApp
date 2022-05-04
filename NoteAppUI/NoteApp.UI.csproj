@@ -52,11 +52,11 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddAndEditNoteForm.cs">
+    <Compile Include="NoteForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddAndEditNoteForm.Designer.cs">
-      <DependentUpon>AddAndEditNoteForm.cs</DependentUpon>
+    <Compile Include="NoteForm.Designer.cs">
+      <DependentUpon>NoteForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainEntry.cs" />
     <Compile Include="MainForm.cs">
@@ -69,8 +69,8 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddAndEditNoteForm.resx">
-      <DependentUpon>AddAndEditNoteForm.cs</DependentUpon>
+    <EmbeddedResource Include="NoteForm.resx">
+      <DependentUpon>NoteForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -83,6 +83,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -102,6 +103,12 @@
       <Project>{aebfc6a8-413b-4c22-ad47-e0729f927d37}</Project>
       <Name>NoteApp.Model</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Icons\add.png" />
+    <Content Include="Icons\delete.png" />
+    <Content Include="Icons\edit.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

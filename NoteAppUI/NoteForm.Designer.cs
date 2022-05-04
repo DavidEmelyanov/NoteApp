@@ -1,6 +1,6 @@
 ﻿namespace NoteAppUI
 {
-	partial class AddAndEditNoteForm
+	partial class NoteForm
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -29,6 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NoteForm));
 			this.TitleLabel = new System.Windows.Forms.Label();
 			this.CategoryLabel = new System.Windows.Forms.Label();
 			this.CreatedLabel = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
 			// TitleTextBox
 			// 
 			this.TitleTextBox.Location = new System.Drawing.Point(71, 13);
+			this.TitleTextBox.MaxLength = 50;
 			this.TitleTextBox.Name = "TitleTextBox";
 			this.TitleTextBox.Size = new System.Drawing.Size(467, 20);
 			this.TitleTextBox.TabIndex = 3;
@@ -108,7 +110,7 @@
 			// ModifiedDateTimeLabel
 			// 
 			this.ModifiedDateTimeLabel.AutoSize = true;
-			this.ModifiedDateTimeLabel.Location = new System.Drawing.Point(448, 47);
+			this.ModifiedDateTimeLabel.Location = new System.Drawing.Point(445, 47);
 			this.ModifiedDateTimeLabel.Name = "ModifiedDateTimeLabel";
 			this.ModifiedDateTimeLabel.Size = new System.Drawing.Size(93, 13);
 			this.ModifiedDateTimeLabel.TabIndex = 7;
@@ -132,7 +134,7 @@
 			this.CancelButton.Location = new System.Drawing.Point(463, 415);
 			this.CancelButton.Name = "CancelButton";
 			this.CancelButton.Size = new System.Drawing.Size(75, 23);
-			this.CancelButton.TabIndex = 9;
+			this.CancelButton.TabIndex = 10;
 			this.CancelButton.Text = "Cancel";
 			this.CancelButton.UseVisualStyleBackColor = true;
 			this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
@@ -143,12 +145,12 @@
 			this.OkButton.Location = new System.Drawing.Point(382, 415);
 			this.OkButton.Name = "OkButton";
 			this.OkButton.Size = new System.Drawing.Size(75, 23);
-			this.OkButton.TabIndex = 10;
+			this.OkButton.TabIndex = 9;
 			this.OkButton.Text = "OK";
 			this.OkButton.UseVisualStyleBackColor = true;
 			this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
 			// 
-			// AddAndEditNoteForm
+			// NoteForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,8 +166,10 @@
 			this.Controls.Add(this.CreatedLabel);
 			this.Controls.Add(this.CategoryLabel);
 			this.Controls.Add(this.TitleLabel);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MinimumSize = new System.Drawing.Size(569, 250);
-			this.Name = "AddAndEditNoteForm";
+			this.Name = "NoteForm";
+			this.ShowIcon = false;
 			this.Text = "Add/Edit Note";
 			this.ResumeLayout(false);
 			this.PerformLayout();

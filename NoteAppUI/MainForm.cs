@@ -93,7 +93,6 @@ namespace NoteAppUI
 			CountNotesLabel.Text = NotesListBox.Items.Count.ToString();
 		}
 
-
 		/// <summary>
 		/// Заполняет категории заметки
 		/// </summary>
@@ -158,7 +157,7 @@ namespace NoteAppUI
 			// Можно добавить только до 200 заметок
 			if (CurrentProjectData.Notes.Count < 200)
 			{
-				AddAndEditNoteForm addAndEditNoteForm = new AddAndEditNoteForm();
+				NoteForm addAndEditNoteForm = new NoteForm();
 				addAndEditNoteForm.AddNote();
 
 				if (addAndEditNoteForm.ShowDialog() == DialogResult.OK)
@@ -174,7 +173,7 @@ namespace NoteAppUI
 			NoteId = NotesListBox.SelectedIndex;
 			if (NotesListBox.SelectedIndex != -1)
 			{
-				AddAndEditNoteForm addAndEditNoteForm = new AddAndEditNoteForm();
+				NoteForm addAndEditNoteForm = new NoteForm();
 				addAndEditNoteForm.EditNote(CurrentProjectData.Notes[NoteId]);
 
 				if (addAndEditNoteForm.ShowDialog() == DialogResult.OK)
@@ -323,7 +322,6 @@ namespace NoteAppUI
 				e.Cancel = true;
 			}
 		}
-
 	}
 }
 

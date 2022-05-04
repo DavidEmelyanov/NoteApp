@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
 using DateTime = System.DateTime;
 
@@ -9,14 +11,25 @@ namespace NoteApp.Model
 	/// </summary>
 	public class Note : ICloneable
 	{
+		/// <summary>
+		/// Заголовок заметки
+		/// </summary>
 		private string _name;
-
+		/// <summary>
+		/// Содержимое заметки
+		/// </summary>
 		private string _content;
-
+		/// <summary>
+		/// Категория заметки
+		/// </summary>
 		private NoteCategory _category;
-
+		/// <summary>
+		/// Дата создания заметки
+		/// </summary>
 		private DateTime _dateOfCreation;
-
+		/// <summary>
+		/// Дата последнего изменения
+		/// </summary>
 		private DateTime _dateOfLastEdit;
 
 		public string Name
@@ -33,19 +46,9 @@ namespace NoteApp.Model
 
 				value = value.Trim();
 
-				if (value.Length == 0)
-				{
-					_name = "Без названия";
-					return;
-				}
-				if (value.Length > 50)
-				{
-					_name = "Без названия";
-					return;
-				}
 				if (!Regex.IsMatch(value, pattern))
 				{
-					_name = "Без названия";
+					_name = "No title";
 					return;
 				}
 				_name = value;
@@ -65,6 +68,9 @@ namespace NoteApp.Model
 			}
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
 		public NoteCategory Category
 		{
 			get { return _category; }
@@ -103,4 +109,52 @@ namespace NoteApp.Model
 			return this.MemberwiseClone();
 		}
 	}
+
+	/// <summary>
+	/// 
+	/// </summary>
+	public class Song
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		private string _title;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		private int _duration;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		private string _genre;
+
+		/// <summary>
+		/// 
+		/// </summary>
+		public int Duration
+		{
+			get
+			{
+				return _duration;
+			}
+			set
+			{
+				if (value < 0)
+				{
+					throw new ArgumentException();
+				}
+
+				_duration = value;
+			}
+
+		}
+		
+	}
+
+
+
+
 }
+
