@@ -37,10 +37,7 @@ namespace NoteAppUI
 		public AddAndEditNoteForm()
 		{
 			InitializeComponent();
-			//ToolTip OkButtonToolTip = new ToolTip();
-			//ToolTip CancelButtonToolTip = new ToolTip();
-
-			// Устанавливаем всплывающие подсказки.
+			// Установка всплывающие подсказки.
 			OkButtonToolTip.SetToolTip(OkButton, "Save changes to current note");
 			CancelButtonToolTip.SetToolTip(CancelButton, "Exit without saving");
 		}
@@ -52,7 +49,7 @@ namespace NoteAppUI
 		{
 			IsEdit = false;
 
-			TitleTextBox.Text = "Noname";
+			TitleTextBox.Text = "No title";
 			FillCategoryItems();
 			CategoryComboBox.SelectedIndex = 0;
 			DateTime dateTimeNow = DateTime.Now;
@@ -92,19 +89,16 @@ namespace NoteAppUI
 		/// </summary>
 		public void FillCategoryItems()
 		{
-			CategoryComboBox.Items.Add(NoteCategory.Other.ToString());
-			CategoryComboBox.Items.Add(NoteCategory.Documents.ToString());
-			CategoryComboBox.Items.Add(NoteCategory.Finance.ToString());
-			CategoryComboBox.Items.Add("Health and Sport");
-			CategoryComboBox.Items.Add(NoteCategory.Home.ToString());
-			CategoryComboBox.Items.Add(NoteCategory.People.ToString());
-			CategoryComboBox.Items.Add(NoteCategory.Work.ToString());
+			foreach (var item in Enum.GetValues(typeof(NoteCategory)))
+			{
+				CategoryComboBox.Items.Add(item);
+			}
 		}
 
 		// Кнопки.
-		#region Buttons
+	#region Buttons
 
-		private void OkButton_Click(object sender, EventArgs e)
+	private void OkButton_Click(object sender, EventArgs e)
 		{
 			if (IsEdit)
 			{
@@ -160,5 +154,6 @@ namespace NoteAppUI
 		{
 
 		}
+
 	}
 }

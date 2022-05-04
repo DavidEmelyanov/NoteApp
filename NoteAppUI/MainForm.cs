@@ -90,7 +90,7 @@ namespace NoteAppUI
 			DeleteNoteButton.Enabled = false;
 
 			// Обновление счётчика заметок.
-			//////////////////////////////////////////////CountNotesLabel.Text = NotesListBox.Items.Count.ToString();
+			CountNotesLabel.Text = NotesListBox.Items.Count.ToString();
 		}
 
 
@@ -324,10 +324,6 @@ namespace NoteAppUI
 			}
 		}
 
-		private void ContentTextBox_TextChanged(object sender, EventArgs e)
-		{
-
-		}
 	}
 }
 

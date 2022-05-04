@@ -24,7 +24,7 @@ namespace NoteApp.Model
 			get { return _name; }
 			set
 			{
-				//string pattern = @"^[\w*\s-0-9]*$";
+				string pattern = @"^[\w*\s-0-9]*$";
 
 				if (value == null)
 				{
@@ -43,11 +43,11 @@ namespace NoteApp.Model
 					_name = "Без названия";
 					return;
 				}
-				//if (!Regex.IsMatch(value, pattern))
-				//{
-				//	_name = "Noname";
-				//	return;
-				//}
+				if (!Regex.IsMatch(value, pattern))
+				{
+					_name = "Без названия";
+					return;
+				}
 				_name = value;
 			}
 		}

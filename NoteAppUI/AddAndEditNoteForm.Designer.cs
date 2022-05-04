@@ -80,6 +80,7 @@
 			// 
 			// CategoryComboBox
 			// 
+			this.CategoryComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.CategoryComboBox.FormattingEnabled = true;
 			this.CategoryComboBox.Location = new System.Drawing.Point(71, 44);
 			this.CategoryComboBox.Name = "CategoryComboBox";
@@ -115,6 +116,9 @@
 			// 
 			// NoteTextBox
 			// 
+			this.NoteTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
 			this.NoteTextBox.Location = new System.Drawing.Point(16, 78);
 			this.NoteTextBox.Multiline = true;
 			this.NoteTextBox.Name = "NoteTextBox";
@@ -124,6 +128,7 @@
 			// 
 			// CancelButton
 			// 
+			this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.CancelButton.Location = new System.Drawing.Point(463, 415);
 			this.CancelButton.Name = "CancelButton";
 			this.CancelButton.Size = new System.Drawing.Size(75, 23);
@@ -134,6 +139,7 @@
 			// 
 			// OkButton
 			// 
+			this.OkButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
 			this.OkButton.Location = new System.Drawing.Point(382, 415);
 			this.OkButton.Name = "OkButton";
 			this.OkButton.Size = new System.Drawing.Size(75, 23);
@@ -158,6 +164,7 @@
 			this.Controls.Add(this.CreatedLabel);
 			this.Controls.Add(this.CategoryLabel);
 			this.Controls.Add(this.TitleLabel);
+			this.MinimumSize = new System.Drawing.Size(569, 250);
 			this.Name = "AddAndEditNoteForm";
 			this.Text = "Add/Edit Note";
 			this.ResumeLayout(false);
