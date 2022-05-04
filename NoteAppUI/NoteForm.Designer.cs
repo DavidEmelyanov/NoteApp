@@ -170,6 +170,7 @@
 			this.MinimumSize = new System.Drawing.Size(569, 250);
 			this.Name = "NoteForm";
 			this.ShowIcon = false;
+			this.ShowInTaskbar = false;
 			this.Text = "Add/Edit Note";
 			this.ResumeLayout(false);
 			this.PerformLayout();

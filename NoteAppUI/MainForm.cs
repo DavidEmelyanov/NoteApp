@@ -178,8 +178,6 @@ namespace NoteAppUI
 
 				if (addAndEditNoteForm.ShowDialog() == DialogResult.OK)
 				{
-					// TODO: Сделать редактирование заметки при сортировке.
-					// Проблема: после сортировки не совпадают индексы заметок!
 					if (CategoryComboBox.SelectedIndex == 0)
 					{
 						CurrentProjectData.Notes[NoteId] = addAndEditNoteForm.CurrentNote;

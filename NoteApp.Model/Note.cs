@@ -9,7 +9,7 @@ namespace NoteApp.Model
 	/// <summary>
 	/// Класс, представляющий заметку.
 	/// </summary>
-	public class Note : ICloneable
+	public class Note : ICloneable // 15
 	{
 		/// <summary>
 		/// Заголовок заметки
@@ -32,10 +32,10 @@ namespace NoteApp.Model
 		/// </summary>
 		private DateTime _dateOfLastEdit;
 
-		public string Name
+		public string Name // 4
 		{
-			get { return _name; }
-			set
+			get { return _name; } // 1
+			set // 3
 			{
 				string pattern = @"^[\w*\s-0-9]*$";
 
@@ -55,7 +55,7 @@ namespace NoteApp.Model
 			}
 		}
 
-		public string Content
+		public string Content // 3
 		{
 			get { return _content; }
 			set
@@ -71,19 +71,19 @@ namespace NoteApp.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public NoteCategory Category
+		public NoteCategory Category // 2
 		{
 			get { return _category; }
 			set { _category = value; }
 		}
 
-		public DateTime DateOfCreation
+		public DateTime DateOfCreation // 2
 		{
 			get { return _dateOfCreation; }
 			set { _dateOfCreation = value; }
 		}
 
-		public DateTime DateOfLastEdit
+		public DateTime DateOfLastEdit // 2
 		{
 			get { return _dateOfLastEdit; }
 			set { _dateOfLastEdit = value; }
@@ -95,7 +95,7 @@ namespace NoteApp.Model
 		/// <param name="name"></param>
 		/// <param name="content"></param>
 		/// <param name="category"></param>
-		public Note(string name, string content, NoteCategory category)
+		public Note(string name, string content, NoteCategory category) // 1
 		{
 			Name = name;
 			Content = content;
@@ -104,57 +104,10 @@ namespace NoteApp.Model
 			DateOfLastEdit = DateTime.Now;
 		}
 
-		public object Clone()
+		public object Clone() // 1
 		{
 			return this.MemberwiseClone();
 		}
 	}
-
-	/// <summary>
-	/// 
-	/// </summary>
-	public class Song
-	{
-		/// <summary>
-		/// 
-		/// </summary>
-		private string _title;
-
-		/// <summary>
-		/// 
-		/// </summary>
-		private int _duration;
-
-		/// <summary>
-		/// 
-		/// </summary>
-		private string _genre;
-
-		/// <summary>
-		/// 
-		/// </summary>
-		public int Duration
-		{
-			get
-			{
-				return _duration;
-			}
-			set
-			{
-				if (value < 0)
-				{
-					throw new ArgumentException();
-				}
-
-				_duration = value;
-			}
-
-		}
-		
-	}
-
-
-
-
 }
 

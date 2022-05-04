@@ -12,7 +12,7 @@ namespace NoteApp.Model
 		/// <summary>
 		/// Хранит путь до файла сохранения.
 		/// </summary>
-		private static readonly string _pathToFile = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp\\NoteApp.notes";
+		public static readonly string _pathToFile = System.Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp\\NoteApp.notes";
 
 		/// <summary>
 		/// Сохраняет объект проекта в файл.

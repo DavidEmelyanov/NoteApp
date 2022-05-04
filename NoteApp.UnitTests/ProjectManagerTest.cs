@@ -13,6 +13,7 @@ namespace NoteApp.UnitTests
 	public class ProjectManagerTest
 	{
 		private readonly string _pathToFile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp\\NoteApp.notes";
+		//private readonly string _pathToTestFile = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp\\NoteAppTest.notes";
 		private readonly string _pathToDirectory = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp";
 		private ProjectData _projectData;
 
@@ -32,14 +33,14 @@ namespace NoteApp.UnitTests
 			}
 		}
 
-		[Test(Description = "Тест сериализации проекта в файл")]
+		[Test(Description = "Тест сохранения проекта в файл")]
 		public void TestProjectManagerSaveToFile()
 		{
 			ProjectManager.SaveToFile(_projectData);
 			Assert.True(File.Exists(_pathToFile));
 		}
 
-		[Test(Description = "Тест десериализации проекта из файла")]
+		[Test(Description = "Тест сериализации/десериализации проекта из файла")]
 		public void TestProjectManagerLoadFromFile_CorrectLoad()
 		{
 			var expectedNoteName = "default name";
